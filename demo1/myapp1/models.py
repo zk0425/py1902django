@@ -7,16 +7,14 @@ class Bookinfo(models.Model):
     postedtime = models.DateField(auto_now_add=True, verbose_name='发表时间')
     altertime = models.DateField(auto_now=True, verbose_name='修改时间')
 
-
-def __str__(self):
-    return self.bookname
+    def __str__(self):
+        return self.bookname
 
 
 class Heroinfo(models.Model):
     name = models.CharField(max_length=30, verbose_name='名字')
-    gender = models.CharField(max_length=10, choices=((0, "男"), (1, "女")), verbose_name='性别')
+    gender = models.CharField(max_length=10, choices=(("男", "男"), ("女", "女")), verbose_name='性别')
     book = models.ForeignKey(Bookinfo, on_delete=models.CASCADE, verbose_name='书名')
 
-
-def __str__(self):
-    return self.name
+    def __str__(self):
+        return self.name

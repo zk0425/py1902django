@@ -1,0 +1,14 @@
+.index{
+    background: aqua;
+    width: 1000px;
+    margin: 0 auto;
+
+}
+#carousel-example-generic{
+    width: 1000px;
+    margin: 0 auto;
+  }
+.item img{
+    width: 1000px;
+    margin: 0 auto;
+}

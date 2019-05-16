@@ -21,5 +21,5 @@ urlpatterns = [
     # 后台管理系统路由
     url('admin/', admin.site.urls),
     # 应用路由
-    url('myapp1/', include("myapp1.urls")),
+    url('myapp1/', include("myapp1.urls", namespace="root")),
 ]
