@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>详情页面</title>
+</head>
+<body>
+    {% if book %}
+    <h2>{{book.bookname}}</h2>
+    <ul>
+        {% for hero in book.heroinfo_set.all %}
+        <li>{{hero.name}}{{hero.gender}}</li>
+        {% empty %}
+        <li>没有角色</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        没有书籍信息
+    {% endif %}
+    <a href="/myapp1/list/">返回列表页</a>
+</body>
+</html>
