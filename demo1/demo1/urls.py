@@ -18,6 +18,8 @@ from django.urls import path
 from django.conf.urls import url, include
 
 urlpatterns = [
+    # 后台管理系统路由
     url('admin/', admin.site.urls),
+    # 应用路由
     url('myapp1/', include("myapp1.urls")),
 ]

@@ -12,6 +12,7 @@ def index(request):
     result = temp.render({"username": "赵奎"})
     return HttpResponse(result)
 
+
 def reg(request):
     return HttpResponse("<h1>这是一个注册页面</h1>")
 
@@ -19,12 +20,15 @@ def reg(request):
 def list(request):
     allbook = Bookinfo.objects.all()
 
-    temp = loader.get_template("myapp1/list.html")
-    result = temp.render({"allbook": allbook})
-    return HttpResponse(result)
+    # temp = loader.get_template("myapp1/list.html")
+    # result = temp.render({"allbook": allbook})
+    # return HttpResponse(result)
+
+    return render(request, "myapp1/list.html", {"allbook": allbook})
 
 
 def detail(request,id):
+    # return HttpResponse("<h1>这是一个详情第%s页面</h1>"%id)
     book = None
     try:
         book = Bookinfo.objects.get(pk=id)
@@ -33,4 +37,4 @@ def detail(request,id):
     temp = loader.get_template("myapp1/detail.html")
     result = temp.render({"book": book})
     return HttpResponse(result)
-    # return HttpResponse("<h1>这是一个详情第%s页面</h1>"%id)
+
