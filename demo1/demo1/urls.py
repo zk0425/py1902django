@@ -22,4 +22,6 @@ urlpatterns = [
     url('admin/', admin.site.urls),
     # 应用路由
     url('myapp1/', include("myapp1.urls", namespace="root")),
+    url('myapp2/', include("myapp2.urls")),
+    url('polls/', include("polls.urls")),
 ]

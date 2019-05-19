@@ -8,9 +8,10 @@ from django.shortcuts import redirect
 
 def index(request):
     # return HttpResponse("这是一个首页面")
-    temp = loader.get_template("myapp1/index.html")
-    result = temp.render({"username": "赵奎"})
-    return HttpResponse(result)
+    # temp = loader.get_template("myapp1/list.html")
+    # result = temp.render({"username": "赵奎"})
+    # return HttpResponse(result)
+    return render(request, "myapp1/index.html", {"username": "赵奎"})
 
 
 def reg(request):
@@ -70,13 +71,11 @@ def addhero(request, id):
 
 
 def updatehero(request,id):
+    hero = Heroinfo.objects.get(pk=id)
     if request.method == "GET":
-        return render(request, 'myapp1/addhero.html', {"bookid":id})
+        return render(request, 'myapp1/updatehero.html', {"hero":hero})
     elif request.method == "POST":
-        book = Bookinfo.objects.get(pk=id)
-        hero = Heroinfo()
         hero.name = request.POST['username']
         hero.gender = request.POST['sex']
-        hero.book = book
         hero.save()
-        return redirect('/myapp1/detail/%s'% (id,))
+        return redirect('/myapp1/detail/%s'% (hero.book.id,))

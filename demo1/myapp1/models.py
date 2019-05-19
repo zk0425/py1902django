@@ -18,3 +18,12 @@ class Heroinfo(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Goods(models.Model):
+    name = models.CharField(max_length=30)
+    # manager = models.Manager()
+    @classmethod
+    def create(cls,name):
+        goods = cls(name=name)
+        return goods
