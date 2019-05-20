@@ -23,5 +23,4 @@ urlpatterns = [
     # 应用路由
     url('myapp1/', include("myapp1.urls", namespace="root")),
     url('myapp2/', include("myapp2.urls",namespace="roos")),
-    url('polls/', include("polls.urls")),
 ]
