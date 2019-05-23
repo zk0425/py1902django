@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+from tinymce.models import HTMLField
 # Create your models here.
 
 
@@ -40,3 +40,12 @@ class Article(models.Model):
     class Meta():
         verbose_name = "文章"
         verbose_name_plural = verbose_name
+
+
+# 富文本框
+
+class MessageInfo(models.Model):
+    username = models.CharField(max_length=20)
+    email = models.EmailField(blank=True, null=True)
+    subject = models.CharField(max_length=50)
+    info = HTMLField()
