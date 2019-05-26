@@ -8,7 +8,8 @@ urlpatterns = [
     url(r'^category/(\d+)/$', views.category, name="category"),
     url(r'^archives/(\d+)/(\d+)/$', views.archives, name="archives"),
     url(r'^tag/(\d+)/$', views.tag, name="tag"),
-    url(r'^contact/$', views.contact, name="contact"),
+    url(r'^contactus/$', views.contactus, name="contactus"),
+    url(r'^addimg/$', views.addimg, name="addimg"),
     url(r'', views.index, name="index"),
 
 ]

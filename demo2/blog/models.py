@@ -49,3 +49,19 @@ class MessageInfo(models.Model):
     email = models.EmailField(blank=True, null=True)
     subject = models.CharField(max_length=50)
     info = HTMLField()
+
+    def __str__(self):
+        return self.title
+    class Meta():
+        verbose_name = "文章"
+        verbose_name_plural = verbose_name
+
+class AddImg(models.Model):
+    img = models.ImageField(upload_to="imgs")
+    desc = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.desc
+    class Meta():
+        verbose_name = "轮播图"
+        verbose_name_plural = verbose_name

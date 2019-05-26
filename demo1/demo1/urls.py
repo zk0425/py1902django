@@ -19,7 +19,7 @@ from django.conf.urls import url, include
 
 urlpatterns = [
     # 后台管理系统路由
-    url('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
     # 应用路由
     url('myapp1/', include("myapp1.urls", namespace="root")),
     url('myapp2/', include("myapp2.urls",namespace="roos")),
