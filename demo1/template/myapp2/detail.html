@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>展示页</title>
+    <link rel="stylesheet" href="/static/bootstrap/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="/static/bootstrap/jQuery2.1.4/jquery-2.1.4.js">
+    </script><script src="/static/bootstrap/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+</head>
+<body>
+
+<!--<h1>标题：{{ poll.title }}</h1>-->
+    <!--<h3>票数结果信息</h3>-->
+    <!--<ul>-->
+        <!--<li>{{ poll.name_one }} &#45;&#45; {{ poll.name_one_num }}</li>-->
+        <!--<li>{{ poll.name_two }} &#45;&#45; {{ poll.name_two_num }}</li>-->
+    <!--</ul><br>-->
+    <!--<a href="{% url 'roos:index' %}">返回</a>-->
+
+<h2>标题：{{ poll.title }}</h2>
+<div class="panel panel-info">
+  <div class="panel-heading"><h4>票数结果信息</h4></div>
+  <div class="panel-body">
+    <ul>
+        <li>{{ poll.name_one }} -- {{ poll.name_one_num }}</li>
+        <li>{{ poll.name_two }} -- {{ poll.name_two_num }}</li>
+    </ul><br>
+    <a href="{% url 'roos:index' %}">返回</a>
+  </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项页</title>
+    <link rel="stylesheet" href="/static/bootstrap/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="/static/bootstrap/jQuery2.1.4/jquery-2.1.4.js">
+    </script><script src="/static/bootstrap/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+</head>
+<body>
+    <!--<h1>{{poll.title}}</h1>-->
+    <!--<form action="{% url 'roos:list' poll.id %}" method="POST">-->
+         <!--{% csrf_token %}-->
+        <!--<h2>选择:</h2>-->
+        <!--<input type="radio" name="sex" checked value="1">{{poll.name_one}}<br>-->
+        <!--<input type="radio" name="sex" value="2">{{poll.name_two}}<br>-->
+        <!--<input type="submit"><br><br>-->
+        <!--<a href="/myapp2/index/">返回</a>-->
+    <!--</form>-->
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  {{poll.title}}
+</button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">{{poll.title}}</h4>
+          </div>
+          <div class="modal-body">
+            <form action="{% url 'roos:list' poll.id %}" method="POST">
+                 {% csrf_token %}
+                <h2>选择:</h2>
+                <div class="cont" style="margin-left: 100px">
+                    <input type="radio" name="sex" checked value="1">{{poll.name_one}}<br>
+                    <input type="radio" name="sex" value="2">{{poll.name_two}}<br>
+                    <input type="submit"><br>
+
+                </div>
+
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default"><a href="/myapp2/index/">返回</a></button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
+

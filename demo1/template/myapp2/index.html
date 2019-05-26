@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页面</title>
+    <link rel="stylesheet" href="/static/bootstrap/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="/static/bootstrap/jQuery2.1.4/jquery-2.1.4.js">
+    </script><script src="/static/bootstrap/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+</head>
+<body>
+    {# {% py1902|default:"helloheloo" %} #}
+    <!--{% comment %}-->
+    <!--<h2>主页面</h2>-->
+    <!--当前用户：{{ request.session.username }}-->
+     <!--<a href="{% url 'roos:logout' %}">退出</a>-->
+        <!--{% if poll %}-->
+    <!--<ul>-->
+        <!--{% for pol in poll %}-->
+        <!--<li>-->
+            <!--<a href="{% url 'roos:list' pol.id %}">{{pol.title}}</a>-->
+        <!--</li>-->
+        <!--{% empty %}-->
+        <!--<li>没有新闻</li>-->
+        <!--{% endfor %}-->
+    <!--</ul>-->
+    <!--{% else %}-->
+        <!--没有信息-->
+    <!--{% endif %}-->
+    <!--{% endcomment %}-->
+
+<h2>主页面</h2>
+<div class="panel panel-primary">
+    <div class="panel-heading"><h4>当前用户：{{ request.session.username }}&nbsp&nbsp&nbsp<a href="{% url 'roos:logout' %}" style="color: white">退出</a></h4></div>
+  <div class="panel-body">
+        {% if poll %}
+    <ul>
+        {% for pol in poll %}
+        <li>
+            <button type="button" class="btn btn-success btn-lg"><a href="{% url 'roos:list' pol.id %}">{{pol.title}}</a></button>
+            <p></p>
+        </li>
+        {% empty %}
+        <li>没有新闻</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        没有信息
+    {% endif %}
+  </div>
+</div>
+
+
+</body>
+</html>
