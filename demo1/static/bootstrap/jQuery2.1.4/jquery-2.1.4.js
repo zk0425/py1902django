@@ -39,7 +39,7 @@
 
 // Support: Firefox 18+
 // Can't be in strict mode, several libs including ASP.NET trace
-// the stack via arguments.caller.callee and Firefox dies if
+// the static via arguments.caller.callee and Firefox dies if
 // you try to trace through "use strict" call chains. (#13335)
 //
 
@@ -117,14 +117,14 @@ jQuery.fn = jQuery.prototype = {
 			slice.call( this );
 	},
 
-	// Take an array of elements and push it onto the stack
+	// Take an array of elements and push it onto the static
 	// (returning the new matched element set)
 	pushStack: function( elems ) {
 
 		// Build a new jQuery matched element set
 		var ret = jQuery.merge( this.constructor(), elems );
 
-		// Add the old object onto the stack (as a reference)
+		// Add the old object onto the static (as a reference)
 		ret.prevObject = this;
 		ret.context = this.context;
 

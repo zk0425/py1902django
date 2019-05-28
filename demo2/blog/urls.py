@@ -10,6 +10,7 @@ urlpatterns = [
     url(r'^tag/(\d+)/$', views.tag, name="tag"),
     url(r'^contactus/$', views.contactus, name="contactus"),
     url(r'^addimg/$', views.addimg, name="addimg"),
+
     url(r'', views.index, name="index"),
 
 ]

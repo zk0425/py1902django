@@ -7,8 +7,10 @@ from django.core.paginator import Paginator
 from django.views.generic import View
 # 导入setting文件
 from django.conf import settings
+from jieba.analyse import ChineseAnalyzer
 from comments.forms import DiscussForm
 from .models import Article,Classify,Tags,MessageInfo,AddImg
+
 # import markdown
 
 # Create your views here.

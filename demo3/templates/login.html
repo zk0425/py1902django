@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block top %}
+<div class="banner-inner"></div>
+{% endblock %}
+{% block body %}
+	<!--/main-->
+	<section class="banner-bottom">
+		<div class="container">
+			<h3 class="tittle">登录</h3>
+			<div class="row inner-sec">
+				<div class="login p-5 bg-dark mx-auto mw-100">
+					<form action="#" method="post">
+						{% csrf_token %}
+						<!--<div class="form-group">-->
+							<!--<label for="exampleInputEmail1 mb-2">Email address</label>-->
+							<!--<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" required="">-->
+							<!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+						<!--</div>-->
+						<div class="form-group">
+							<label for="exampleInputusername mb-2">用户名</label>
+							<input type="text" class="form-control" name="username" id="exampleInputusername" aria-describedby="emailHelp" placeholder="请输入用户名" required="">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputPassword1 mb-2">密码</label>
+							<input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="请输入密码" required="">
+						</div>
+						<div class="form-check mb-2">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">记住密码</label>
+						</div>
+						<button type="submit" class="btn btn-primary submit mb-4">登录</button>
+						<p>
+							<a href="{% url 'food:register' %}"> Don't have an account?</a>
+						</p>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--//main-->
+{% endblock %}
