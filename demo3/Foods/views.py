@@ -1,9 +1,14 @@
 from django.shortcuts import render,redirect,reverse
+from django.http import JsonResponse
+from django.core.paginator import Paginator
+from django.http import HttpResponse
 from .models import *
 
 # Create your views here.
 def about(request):
-    return render(request,"about.html")
+    msg = Cook.objects.all()
+    temp = Body.objects.all()
+    return render(request,"about.html",locals())
 
 
 def blog(request):
@@ -11,17 +16,38 @@ def blog(request):
 
 
 def contact(request):
-    return render(request,"contact.html")
-
-
+    if request.method == "POST":
+        x = Subject()
+        x.username = request.session["username"]
+        x.email = request.POST.get("Email")
+        x.sub = request.POST.get("Subject")
+        x.detal = request.POST.get("Detail")
+        x.save()
+        return render(request, "contact.html", {"msg": "提交成功"})
+    else:
+        return render(request, "contact.html")
 def gallery(request):
     return render(request,"gallery.html")
 
 
-def index(request):
-    temp = Body.objects.all()
-    return render(request, "index.html", {"msg": temp})
+def menu(request):
+    temp1 = Shop.objects.all().order_by("-num")[:4]
+    temp2 = Shop.objects.all().order_by("-date")[:4]
+    temp = Style.objects.all()
+    # paginator = Paginator(temp, 1)
+    #     # page = paginator.get_page(1)
+    return render(request, "menu.html",locals())
 
+
+def index(request):
+    temp1 = Shop.objects.all().order_by("-num")[:4]
+    temp2 = Shop.objects.all().order_by("-date")[:4]
+    temp3 = Style.objects.all()
+    msg = Body.objects.all()
+    hero = Hero.objects.all()[1:3]
+    log = Log.objects.dates(field_name="create_time", kind="month", order='DESC')
+
+    return render(request, "index.html", locals())
 
 
 def login(request):
@@ -30,12 +56,21 @@ def login(request):
     else:
         username = request.POST.get("username")
         password = request.POST.get("password")
-
-        user = User.objects.get(username=username)
-        if user.password != password:
-            return render(request, "myapp2/login.html", {"msg": "密码错误"})
-        else:
-            return redirect(reverse('food:index'))
+        # print(username,password)
+        try:
+            user = User.objects.get(username=username)
+            # if user.username != username:
+            #     return render(request, "register.html", {"msg": "用户名不存在，请注册"})
+            if user.password != password:
+                return render(request, "login.html", {"msg": "密码错误"})
+            else:
+                request.session["username"] = username
+                res = redirect(reverse('food:index'))
+                return res
+            # return redirect(reverse('food:index'))
+        except Exception as e:
+            print("错误信息",e)
+            return render(request, "login.html", {"msg": "用户名或密码错误,或未注册，请注册"})
 
 
 def register(request):
@@ -43,7 +78,6 @@ def register(request):
         return render(request,"register.html")
     else:
         username = request.POST.get("username").strip()
-
         password = request.POST.get("password").strip()
         password2 = request.POST.get("password2").strip()
 
@@ -74,3 +108,18 @@ def register(request):
 
 def single(request):
     return render(request,"single.html")
+
+
+def logout(request):
+    res = redirect(reverse('food:index'))
+    request.session.flush()
+    return res
+
+
+def text(request):
+    msg = "您尚未登录，请登录"
+    return render(request, "login.html",{"msg": msg})
+
+
+def error(request):
+    return render(request,"404.html")

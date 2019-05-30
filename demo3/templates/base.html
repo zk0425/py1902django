@@ -20,6 +20,7 @@
 	<link href="/static/css/contact.css" rel='stylesheet' type='text/css' />
 	<link href="/static/css/style.css" rel='stylesheet' type='text/css' />
 	<link href="/static/css/fontawesome-all.css" rel="stylesheet">
+	<script src="/static/js/jquery-2.2.3.min.js"></script>
 	<link href="http://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
 	<link href="http://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700" rel="stylesheet">
 </head>
@@ -29,7 +30,7 @@
 		<div class="top-bar_sub container-fluid">
 			<div class="row">
 				<div class="col-md-4 top-forms text-left mt-4"  data-aos="fade-up">
-					<span>欢迎回来</span>
+					<span>欢迎回来：{{ request.session.username }}&nbsp&nbsp&nbsp<a href="{% url 'food:logout' %}" style="color:#707173">退出</a></span>
 					<span class="mx-lg-4 mx-md-2  mx-1">
 						<a href="{% url 'food:login' %}">
 							<i class="fas fa-lock"></i>登录</a>
@@ -40,8 +41,8 @@
 					</span>
 				</div>
 				<div class="col-md-4 logo text-center" data-aos="fade-up">
-					<a class="navbar-brand" href="index.html">
-						<i class="fab fa-gitkraken"></i> Baked</a>
+					<a class="navbar-brand" href="{% url 'food:index' %}">
+						<i class="fab fa-gitkraken"></i> 蛋糕房</a>
 				</div>
 
 				<div class="col-md-4 log-icons text-right"  data-aos="fade-up">
@@ -93,35 +94,35 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mx-auto">
 					<li class="nav-item">
-						<a class="nav-link" href="{% url 'food:index' %}">Home
+						<a class="nav-link" href="{% url 'food:index' %}">首页
 							<span class="sr-only">(current)</span>
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="{% url 'food:about' %}">About</a>
+						<a class="nav-link" href="{% url 'food:about' %}">介绍</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="index.html">Menu</a>
+						<a class="nav-link" href="{% url 'food:menu' %}">菜单</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="blog.html">Blog</a>
+						<a class="nav-link" href="{% url 'food:blog' %}">记录</a>
 					</li>
 
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-						    aria-expanded="false">
-							Drop Down
-						</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="#"></a>
-								<a class="dropdown-item" href="gallery.html">Gallery</a>
-								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="404.html">Services</a>
+					<!--<li class="nav-item dropdown">-->
+						<!--<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"-->
+						    <!--aria-expanded="false">-->
+							<!--Drop Down-->
+						<!--</a>-->
+						<!--<div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+								<!--<a class="dropdown-item" href="#"></a>-->
+								<!--<a class="dropdown-item" href="{% url 'food:gallery' %}">Gallery</a>-->
+								<!--<div class="dropdown-divider"></div>-->
+								<!--<a class="dropdown-item" href="404.html">Services</a>-->
 
-							</div>
-					</li>
+						<!--</div>-->
+					<!--</li>-->
 					<li class="nav-item">
-						<a class="nav-link" href="contact.html">Contact</a>
+						<a class="nav-link" href="{% url 'food:contact' %}">联系我们</a>
 					</li>
 
 				</ul>
@@ -130,12 +131,12 @@
 
 	</div>
 	<!--//nav-->
-	<ol class="breadcrumb">
-		<li class="breadcrumb-item">
-			<a href="index.html">Home</a>
-		</li>
-		<li class="breadcrumb-item active">Signin</li>
-	</ol>
+	<!--<ol class="breadcrumb">-->
+		<!--<li class="breadcrumb-item">-->
+			<!--<a href="{% url 'food:index' %}">Home</a>-->
+		<!--</li>-->
+		<!--<li class="breadcrumb-item active">Signin</li>-->
+	<!--</ol>-->
 
         {% block body %} {% endblock %}
 
@@ -147,7 +148,7 @@
 					<h3>About US</h3>
 					<p>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. lacinia eget consectetur sed, convallis at tellus..</p>
 					<div class="read">
-						<a href="single.html" class="btn btn-primary read-m">Read More</a>
+						<a href="{% url 'food:error' %}" class="btn btn-primary read-m">Read More</a>
 					</div>
 				</div>
 				<!-- subscribe -->
@@ -206,7 +207,7 @@
 	<!---->
 
 	<!-- js -->
-	<script src="/static/js/jquery-2.2.3.min.js"></script>
+
 	<!-- //js -->
 	 <!-- /js files -->
 	<link href='/static/css/aos.css' rel='stylesheet prefetch' type="text/css" media="all" />

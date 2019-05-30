@@ -12,32 +12,28 @@
 			<div class="carousel-inner" role="listbox">
 				<div class="carousel-item active">
 					<div class="carousel-caption">
-						<h3>Bakers Delight Your
-							<span>Local Baker</span>
+						<h3 style="color: #F0FAEC">面包会有的，牛奶会有的，一切都会有的
 						</h3>
-						<img src="#">
+
 					</div>
 				</div>
 				<div class="carousel-item item2">
 					<div class="carousel-caption">
-						<h3>Freshly baked all day
-							<span>Every day!</span>
+						<h3>凡不是就着泪水吃过面包的人是不懂得人生之味的人
 						</h3>
 
 					</div>
 				</div>
 				<div class="carousel-item item3">
 					<div class="carousel-caption">
-						<h3>Bakers Delight Your
-							<span>Local Baker</span>
+						<h3>酒要喝醉的，面包要吃热的
 						</h3>
 
 					</div>
 				</div>
 				<div class="carousel-item item4">
 					<div class="carousel-caption">
-						<h3>Freshly baked all day
-							<span>Every day!</span>
+						<h3>为美而献身比为面包而活着要幸福得多
 						</h3>
 
 					</div>
@@ -68,19 +64,16 @@
 			<h3 class="tittle">{{ i.title }}</h3>
 			<div class="row inner-sec">
 				<div class="col-lg-6 about-img" data-aos="flip-right">
-					<img src="/static/images/ab.jpg" class="img-fluid" alt="">
+					<img src="/static/images/{{ i.img }}" class="img-fluid" alt="">
 				</div>
 				<div class="col-lg-6 about-info text-left" data-aos="flip-left" >
 					<h4 class="sub-hd mb-4">{{ i.littletitle }} </h4>
 					<p>{{ i.body }}</p>
-					<p class="sup-para mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit sedc dnmo eiusmod tempor incididunt ut labore et dolore magna
-						aliqua uta enim ad minim ven iam quis nostrud exercitation ullamco labor nisi ut aliquip exea commodo consequat duis
-						aute irudre dolor in elit sed uta labore dolore reprehender</p>
 					<div class="view my-4">
-						<a href="single.html" class="btn btn-primary read-m">View More</a>
+						<a href="{% url 'food:error' %}" class="btn btn-primary read-m">View More</a>
 					</div>
 
-					<img src="/static/images/{{ i.img }}" class="img-fluid" alt="">
+					<!--<img src="/static/images/{{ i.img }}" class="img-fluid" alt="">-->
 				</div>
 			</div>
 		</div>
@@ -93,7 +86,7 @@
 	<!--/banner-bottom-->
 	<section class="grid-info-section">
 		<div class="container">
-			<h3 class="tittle">Best Seller</h3>
+			<h3 class="tittle">Best Smile</h3>
 			<div class="row inner-sec">
 				<ul id="flexiselDemo1">
 					<li>
@@ -148,17 +141,17 @@
 	<!--/Menu-->
 	<section class="banner-bottom menu" id="menu">
 		<div class="container">
-			<h3 class="tittle">Our Menu</h3>
+			<h3 class="tittle">菜单</h3>
 			<div class="row inner-sec">
 				<div class="tabs">
 					<ul class="nav nav-pills mb-5 justify-content-center" id="pills-tab" role="tablist">
 						<li class="nav-item">
 							<a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home"
-							    aria-selected="true">Hot Cake</a>
+							    aria-selected="true">热门蛋糕</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile"
-							    aria-selected="false">New Cake</a>
+							    aria-selected="false">新品蛋糕</a>
 						</li>
 
 					</ul>
@@ -166,135 +159,89 @@
 						<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 							<div class="menu-grids my-lg-4 my-md-2">
 								<div class="row inner-menu mt-4">
-									<div class="col-md-6 menu-grid-left" data-aos="fade-down">
-										<div class="row mt-2">
-											<div class="col-md-5 menu-img">
-												<img src="/static/images/1.jpg" class="img-fluid rounded-circle" alt="">
-											</div>
-											<div class="col-md-7 menu-img-info mt-4 mt-md-2">
-												<h5>Pellentesque dui, non felis. Maecenas male non felis</h5>
-												<p class="sub-meta mt-2">
-
-													$80
-												</p>
-											</div>
-										</div>
-
-									</div>
-									<div class="col-md-6 menu-grid-right" data-aos="fade-down">
-										<div class="row mt-2">
-											<div class="col-md-5 menu-img">
-												<img src="/static/images/2.jpg" class="img-fluid rounded-circle" alt="">
-											</div>
-											<div class="col-md-7 menu-img-info mt-4 mt-md-2">
-												<h5>Pellentesque dui, non felis. Maecenas male non felis</h5>
-												<p class="sub-meta mt-2">
-
-													$70
-												</p>
-											</div>
-										</div>
-
-									</div>
-								</div>
-								<div class="row inner-menu mt-4">
-									<div class="col-md-6 menu-grid-left" data-aos="fade-down">
-										<div class="row mt-2">
-											<div class="col-md-5 menu-img">
-												<img src="/static/images/3.jpg" class="img-fluid rounded-circle" alt="">
-											</div>
-											<div class="col-md-7 menu-img-info mt-4 mt-md-2">
-												<h5>Pellentesque dui, non felis. Maecenas male non felis</h5>
-												<p class="sub-meta mt-2">
-
-													$90
-												</p>
-											</div>
-										</div>
-
-									</div>
-									<div class="col-md-6 menu-grid-right" data-aos="fade-down">
-										<div class="row mt-2">
-											<div class="col-md-5 menu-img">
-												<img src="/static/images/4.jpg" class="img-fluid rounded-circle" alt="">
-											</div>
-											<div class="col-md-7 menu-img-info mt-4 mt-md-2">
-												<h5>Pellentesque dui, non felis. Maecenas male non felis</h5>
-												<p class="sub-meta mt-2">
-													$100
-												</p>
-											</div>
-										</div>
-
-									</div>
+									 {% for i in temp1 %}
+                                <div class="col-md-6 menu-grid-left" data-aos="fade-down" style="margin-bottom: 30px">
+                                    <div class="row mt-2">
+                                        <div class="col-md-5 menu-img">
+                                            <img src="/static/img/{{ i.img }}" class="img-fluid rounded-circle" alt="">
+                                        </div>
+                                        <div class="col-md-7 menu-img-info mt-4 mt-md-2">
+                                            <h5>{{ i.title }}</h5>
+                                            <p class="sub-meta mt-2">
+                                                ${{ i.price }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                 {% endfor %}
 								</div>
 							</div>
 						</div>
 						<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
 							<div class="menu-grids my-lg-4 my-md-2">
 									<div class="row inner-menu mt-4">
-									<div class="col-md-6 menu-grid-left" data-aos="fade-down">
-										<div class="row mt-2">
-											<div class="col-md-5 menu-img">
-												<img src="/static/images/1.jpg" class="img-fluid rounded-circle" alt="">
-											</div>
-											<div class="col-md-7 menu-img-info mt-4 mt-md-2">
-												<h5>Pellentesque dui, non felis. Maecenas male non felis</h5>
-												<p class="sub-meta mt-2">
+									{% for j in temp2 %}
+                               <div class="col-md-6 menu-grid-left" data-aos="fade-down">
+                                    <div class="row mt-2">
+                                        <div class="col-md-5 menu-img">
+                                            <img src="/static/img/{{ j.img }}" class="img-fluid rounded-circle" alt="">
+                                        </div>
+                                        <div class="col-md-7 menu-img-info mt-4 mt-md-2">
+                                            <h5>{{ j.title }}</h5>
+                                            <p class="sub-meta mt-2">
+                                                {{ j.price }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+									<!--<div class="col-md-6 menu-grid-right" data-aos="fade-down">-->
+										<!--<div class="row mt-2">-->
+											<!--<div class="col-md-5 menu-img">-->
+												<!--<img src="/static/images/2.jpg" class="img-fluid rounded-circle" alt="">-->
+											<!--</div>-->
+											<!--<div class="col-md-7 menu-img-info mt-4 mt-md-2">-->
+												<!--<h5>Pellentesque dui, non felis. Maecenas male non felis</h5>-->
+												<!--<p class="sub-meta mt-2">-->
 
-													$100
-												</p>
-											</div>
-										</div>
+													<!--$98-->
+												<!--</p>-->
+											<!--</div>-->
+										<!--</div>-->
 
-									</div>
-									<div class="col-md-6 menu-grid-right" data-aos="fade-down">
-										<div class="row mt-2">
-											<div class="col-md-5 menu-img">
-												<img src="/static/images/2.jpg" class="img-fluid rounded-circle" alt="">
-											</div>
-											<div class="col-md-7 menu-img-info mt-4 mt-md-2">
-												<h5>Pellentesque dui, non felis. Maecenas male non felis</h5>
-												<p class="sub-meta mt-2">
+									<!--</div>-->
+								<!--</div>-->
+								<!--<div class="row inner-menu mt-4">-->
+									<!--<div class="col-md-6 menu-grid-left" data-aos="fade-down">-->
+										<!--<div class="row mt-2">-->
+											<!--<div class="col-md-5 menu-img">-->
+												<!--<img src="/static/images/3.jpg" class="img-fluid rounded-circle" alt="">-->
+											<!--</div>-->
+											<!--<div class="col-md-7 menu-img-info mt-4 mt-md-2">-->
+												<!--<h5>Pellentesque dui, non felis. Maecenas male non felis</h5>-->
+												<!--<p class="sub-meta mt-2">-->
 
-													$98
-												</p>
-											</div>
-										</div>
+													<!--$ 100-->
+												<!--</p>-->
+											<!--</div>-->
+										<!--</div>-->
 
-									</div>
-								</div>
-								<div class="row inner-menu mt-4">
-									<div class="col-md-6 menu-grid-left" data-aos="fade-down">
-										<div class="row mt-2">
-											<div class="col-md-5 menu-img">
-												<img src="/static/images/3.jpg" class="img-fluid rounded-circle" alt="">
-											</div>
-											<div class="col-md-7 menu-img-info mt-4 mt-md-2">
-												<h5>Pellentesque dui, non felis. Maecenas male non felis</h5>
-												<p class="sub-meta mt-2">
+									<!--</div>-->
+									<!--<div class="col-md-6 menu-grid-right" data-aos="fade-down">-->
+										<!--<div class="row mt-2">-->
+											<!--<div class="col-md-5 menu-img">-->
+												<!--<img src="/static/images/4.jpg" class="img-fluid rounded-circle" alt="">-->
+											<!--</div>-->
+											<!--<div class="col-md-7 menu-img-info mt-4 mt-md-2">-->
+												<!--<h5>Pellentesque dui, non felis. Maecenas male non felis</h5>-->
+												<!--<p class="sub-meta mt-2">-->
 
-													$ 100
-												</p>
-											</div>
-										</div>
+													<!--$ 88-->
+												<!--</p>-->
+											<!--</div>-->
+										<!--</div>-->
 
-									</div>
-									<div class="col-md-6 menu-grid-right" data-aos="fade-down">
-										<div class="row mt-2">
-											<div class="col-md-5 menu-img">
-												<img src="/static/images/4.jpg" class="img-fluid rounded-circle" alt="">
-											</div>
-											<div class="col-md-7 menu-img-info mt-4 mt-md-2">
-												<h5>Pellentesque dui, non felis. Maecenas male non felis</h5>
-												<p class="sub-meta mt-2">
-
-													$ 88
-												</p>
-											</div>
-										</div>
-
-									</div>
+									<!--</div>-->
 								</div>
 							</div>
 						</div>
@@ -305,172 +252,112 @@
 		</div>
 	</section>
 	<!--//Menu-->
-
 	<!--/blog-->
-	<section class="blog_sec container-fluid">
-		<h3 class="tittle">Latest Blogs</h3>
-		<div class="row inner-sec">
-			<div class="col-lg-6 banner-btm-left">
-				<div class="banner-btm-top">
-					<div class="banner-btm-inner a1 text-left">
-						<div class="blog_date">
+	<section class="banner-bottom">
+		<div class="container">
+			<h3 class="tittle">我们的足迹</h3>
+			<div class="row inner-sec">
+				<div class="col-md-6 banner-btm-left">
+					<div class="banner-btm-top">
+						<div class="banner-btm-inner a1 text-left">
+							<div class="blog_date">
 
-							<h4>Feb.05.2018</h4>
+								<h4>Feb.10.2018</h4>
+
+							</div>
+							<h6>
+								<a href="single.html">二七广场</a>
+							</h6>
+							<p class="paragraph">当奶油恋上芝士，香浓的爱意沉浸在芝士的丝滑里，却因同根生而被命运阻隔，于是这份爱恋少了些许甜腻，多了一丝酸楚。幸好，有相思豆的铺撒，让原本凄凉的爱情多了无限温暖。</p>
+
+							<a href="{% url 'food:error' %}" class="blog-btn">Know More</a>
+						</div>
+						<div class="banner-btm-inner a2">
 
 						</div>
-						<h6>
-							<a href="single.html">Malted wheat flake bread</a>
-						</h6>
-						<p class="paragraph">Aenean orci erat, placerat id pulvinar nec, tincidunt vel eros.</p>
-
-						<a href="single.html" class="blog-btn" data-aos="fade-down">Know More</a>
 					</div>
-					<div class="banner-btm-inner a2">
-
-					</div>
-				</div>
-				<div class="banner-btm-bottom">
-					<div class="banner-btm-inner a3">
-
-					</div>
-					<div class="banner-btm-inner a4 text-left">
-						<div class="blog_date">
-
-							<h4>Feb.18.2018</h4>
+					<div class="banner-btm-bottom">
+						<div class="banner-btm-inner a3">
 
 						</div>
-						<h6>
-							<a href="single.html">Malted wheat flake bread</a>
-						</h6>
-						<p class="paragraph">Aenean orci erat, placerat id pulvinar nec, tincidunt vel eros.</p>
+						<div class="banner-btm-inner a4 text-left">
+							<div class="blog_date">
 
-						<a href="single.html" class="blog-btn" data-aos="fade-down">Know More</a>
+								<h4>Feb.18.2019</h4>
+
+							</div>
+							<h6>
+								<a href="single.html">金山区东三街</a>
+							</h6>
+							<p class="paragraph">粉红色的蛋糕 来自大自然的鲜明而清新的粉红色,涂抹在可爱的花朵上,还有灿烂的蝴蝶轻轻驻足。不是童话,却胜似童话。讨好味觉的艺术得到了淋漓尽致的发挥.</p>
+
+							<a href="{% url 'food:error' %}" class="blog-btn">Know More</a>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="col-lg-6 banner-btm-left">
-				<div class="banner-btm-top">
-					<div class="banner-btm-inner a1 text-left">
-						<div class="blog_date">
+				<div class="col-md-6 banner-btm-left">
+					<div class="banner-btm-top">
+						<div class="banner-btm-inner a1 text-left">
+							<div class="blog_date">
 
-							<h4>Mar.25.2018</h4>
+								<h4>Aug.05.2017</h4>
+
+							</div>
+							<h6>
+								<a href="single.html">文化路英才街</a>
+							</h6>
+							<p class="paragraph">香浓细滑的巧克力和奶油，再加上酥脆的姜饼干，口感丰富层次鲜明。搭配上一杯清甜的果香红茶，清新的口感，迷人的色泽、馥郁的水果香，马上让你心旷神怡，唇齿留香。</p>
+							<div class="clearfix"></div>
+							<a href="{% url 'food:error' %}" class="blog-btn">Know More</a>
+						</div>
+						<div class="banner-btm-inner a5">
 
 						</div>
-						<h6>
-							<a href="single.html">Malted wheat flake bread</a>
-						</h6>
-						<p class="paragraph">Aenean orci erat, placerat id pulvinar nec, tincidunt vel eros.</p>
-
-						<a href="single.html" class="blog-btn" data-aos="fade-down">Know More</a>
 					</div>
-					<div class="banner-btm-inner a5">
-
-					</div>
-				</div>
-				<div class="banner-btm-bottom">
-					<div class="banner-btm-inner a6">
-
-					</div>
-					<div class="banner-btm-inner a4 text-left">
-						<div class="blog_date">
-
-							<h4>Mar.30.2018</h4>
+					<div class="banner-btm-bottom">
+						<div class="banner-btm-inner a6">
 
 						</div>
-						<h6>
-							<a href="single.html">Malted wheat flake bread</a>
-						</h6>
-						<p class="paragraph">Aenean orci erat, placerat id pulvinar nec, tincidunt vel eros.</p>
+						<div class="banner-btm-inner a4 text-left">
+							<div class="blog_date">
 
-						<a href="single.html" class="blog-btn" data-aos="fade-down">Know More</a>
+								<h4>Jan.11.2016</h4>
+
+							</div>
+							<h6>
+								<a href="single.html">明德路德智街</a>
+							</h6>
+							<p class="paragraph">全巧克力的蛋糕 它不是最眩、最醒目的，但是总有忠实拥趸对它青睐有加。香浓诱人的巧克力口味;柔软的口感、甜蜜的味道,完美的全巧克力蛋糕经得起各种口味的挑剔.表面富有曲线美的巧克力花纹与蛋糕的名称相得益彰。</p>
+
+							<a href="{% url 'food:error' %}" class="blog-btn">Know More</a>
+						</div>
 					</div>
 				</div>
-			</div>
-
+			 </div>
 		</div>
 	</section>
 	<!--//blog-->
 	<!--/Gallry-->
 	<section class="banner-bottom">
 		<div class="container">
-			<h3 class="tittle">Our Gallery</h3>
+			<h3 class="tittle">样式</h3>
 			<div class="row inner-sec">
 
-				<div class="col-md-4 proj_gallery_grid" data-aos="zoom-in">
-					<div class="section_1_gallery_grid">
-						<a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/p1.jpg">
-							<div class="section_1_gallery_grid1">
-								<img src="/static/images/p1.jpg" alt=" " class="img-fluid" />
-								<div class="proj_gallery_grid1_pos">
-									<h3>Baked Food</h3>
-									<p>Add some text</p>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="section_1_gallery_grid" data-aos="zoom-in">
-						<a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/p2.jpg">
-							<div class="section_1_gallery_grid1">
-								<img src="/static/images/p2.jpg" alt=" " class="img-fluid" />
-								<div class="proj_gallery_grid1_pos">
-									<h3>Baked Food</h3>
-									<p>Add some text</p>
-								</div>
-							</div>
-						</a>
-					</div>
-
-				</div>
-				<div class="col-md-4 proj_gallery_grid" data-aos="zoom-in">
-					<div class="section_1_gallery_grid">
-						<a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/p4.jpg">
-							<div class="section_1_gallery_grid1">
-								<img src="/static/images/p4.jpg" alt=" " class="img-fluid" />
-								<div class="proj_gallery_grid1_pos">
-									<h3>Baked Food</h3>
-									<p>Add some text</p>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="section_1_gallery_grid" data-aos="zoom-in">
-						<a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/p5.jpg">
-							<div class="section_1_gallery_grid1">
-								<img src="/static/images/p5.jpg" alt=" " class="img-fluid" />
-								<div class="proj_gallery_grid1_pos">
-									<h3>Baked Food</h3>
-									<p>Add some text</p>
-								</div>
-							</div>
-						</a>
-					</div>
-
-				</div>
-				<div class="col-md-4 proj_gallery_grid" data-aos="zoom-in">
-					<div class="section_1_gallery_grid">
-						<a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/p3.jpg">
-							<div class="section_1_gallery_grid1">
-								<img src="/static/images/p3.jpg" alt=" " class="img-fluid" />
-								<div class="proj_gallery_grid1_pos">
-									<h3>Baked Food</h3>
-									<p>Add some text</p>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="section_1_gallery_grid" data-aos="zoom-in">
-						<a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/p2.jpg">
-							<div class="section_1_gallery_grid1">
-								<img src="/static/images/p2.jpg" alt=" " class="img-fluid" />
-								<div class="proj_gallery_grid1_pos">
-									<h3>Baked Food</h3>
-									<p>Add some text</p>
-								</div>
-							</div>
-						</a>
-					</div>
-
-				</div>
+			{% for m in temp3 %}
+            <div class="col-md-4 proj_gallery_grid" data-aos="zoom-in" style="margin-bottom: 30px">
+                <div class="section_1_gallery_grid" style="float: left">
+                    <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/{{ m.img }}">
+                        <div class="section_1_gallery_grid1">
+                            <img src="/static/images/{{ m.img }}" alt=" " class="img-fluid" />
+                            <div class="proj_gallery_grid1_pos">
+                                <h3>{{ m.name }}</h3>
+                                <!--<p>Add some text</p>-->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
 			</div>
 		</div>
 	</section>
@@ -478,59 +365,26 @@
 	<!--reviews_sec-->
 	<section class="banner-bottom reviews_sec">
 		<div class="container">
-			<h3 class="tittle cen">Testimonial</h3>
+			<h3 class="tittle cen">荣誉</h3>
 			<div class="inner-sec">
 				<div class="flexslider mx-auto">
 					<ul class="slides">
+						{% for n in hero %}
 						<li>
 							<div class="row">
 								<div class="col-md-3 testimonials_grid-inn">
 
-									<img src="/static/images/t1.jpg" alt=" " class="img-fluid" />
+									<img src="/static/images/{{n.img}}" alt=" " class="img-fluid" />
 								</div>
 								<div class="col-md-9 testimonials_grid text-left">
-									<h3>Gretchen
-										<span>(Customer)</span>
+									<h3>{{ n.name }}
 									</h3>
-									<i>United States</i>
-									<p>Maecenas interdum, metus vitae tincidunt porttitor,Proin eget gravida odio. Donec ullamcorper est eu magna quam
-										egestas sem, ac scelerisque nisl nibh vel lacus. Proin eget gravida odio. Donec ullamcorper est eu accumsan cursus.</p>
+									<i>{{ n.title }}</i>
+									<p>{{ n.body }}</p>
 								</div>
 							</div>
 						</li>
-						<li>
-							<div class="row">
-								<div class="col-md-3 testimonials_grid-inn">
-
-									<img src="/static/images/t2.jpg" alt=" " class="img-fluid" />
-								</div>
-								<div class="col-md-9 testimonials_grid text-left">
-									<h3>Josephine Lee
-										<span>Customer</span>
-									</h3>
-									<i>United States</i>
-									<p>Maecenas interdum, metus vitae tincidunt porttitor,Proin eget gravida odio. Donec ullamcorper est eu magna quam
-										egestas sem, ac scelerisque nisl nibh vel lacus. Proin eget gravida odio. Donec ullamcorper est eu accumsan cursus.</p>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="row">
-								<div class="col-md-3 testimonials_grid-inn">
-
-
-									<img src="/static/images/t1.jpg" alt=" " class="img-fluid" />
-								</div>
-								<div class="col-md-9 testimonials_grid text-left">
-									<h3>Mark Olson
-										<span>Customer</span>
-									</h3>
-									<i>United States</i>
-									<p>Maecenas interdum, metus vitae tincidunt porttitor,Proin eget gravida odio. Donec ullamcorper est eu magna quam
-										egestas sem, ac scelerisque nisl nibh vel lacus. Proin eget gravida odio. Donec ullamcorper est eu accumsan cursus.</p>
-								</div>
-							</div>
-						</li>
+						{% endfor %}
 					</ul>
 				</div>
 			</div>

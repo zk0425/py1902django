@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+{% block top %}
+<div class="banner-inner"></div>
+{% endblock %}
+{% block body %}
+<!--/Menu-->
+<section class="banner-bottom menu" id="menu">
+    <div class="container">
+        <h3 class="tittle">我们的菜单</h3>
+        <div class="row inner-sec">
+            <div class="tabs">
+                <ul class="nav nav-pills mb-5 justify-content-center" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home"
+                            aria-selected="true">Hot Cake</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile"
+                            aria-selected="false">New Cake</a>
+                    </li>
+
+                </ul>
+
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                        <div class="menu-grids my-lg-4 my-md-2">
+                            <div class="row inner-menu mt-4">
+                               <!--{% if temp.type == hot %}-->
+                                {% for i in temp1 %}
+                                <div class="col-md-6 menu-grid-left" data-aos="fade-down" style="margin-bottom: 30px">
+                                    <div class="row mt-2">
+                                        <div class="col-md-5 menu-img">
+                                            <img src="/static/img/{{ i.img }}" class="img-fluid rounded-circle" alt="">
+                                        </div>
+                                        <div class="col-md-7 menu-img-info mt-4 mt-md-2">
+                                            <h5>{{ i.title }}</h5>
+                                            <p class="sub-meta mt-2">
+                                                ${{ i.price }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                 {% endfor %}
+                                <!--{% endif %}-->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                        <div class="menu-grids my-lg-4 my-md-2">
+                            <div class="row inner-menu mt-4">
+                                <!--{% if temp.type == new %}-->
+                                {% for j in temp2 %}
+                               <div class="col-md-6 menu-grid-left" data-aos="fade-down">
+                                    <div class="row mt-2">
+                                        <div class="col-md-5 menu-img">
+                                            <img src="/static/img/{{ j.img }}" class="img-fluid rounded-circle" alt="">
+                                        </div>
+                                        <div class="col-md-7 menu-img-info mt-4 mt-md-2">
+                                            <h5>{{ j.title }}</h5>
+                                            <p class="sub-meta mt-2">
+                                                {{ j.price }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                                <!--{% endif %}-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--//Menu-->
+
+<!--/Gallry-->
+<section class="banner-bottom">
+    <div class="container">
+        <h3 class="tittle">样式展示</h3>
+        <div class="row inner-sec">
+            {% for m in temp %}
+            <div class="col-md-4 proj_gallery_grid" data-aos="zoom-in" style="margin-bottom: 30px">
+                <div class="section_1_gallery_grid" style="float: left">
+                    <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/{{ m.img }}">
+                        <div class="section_1_gallery_grid1">
+                            <img src="/static/images/{{ m.img }}" alt=" " class="img-fluid" />
+                            <div class="proj_gallery_grid1_pos">
+                                <h3>{{ m.name }}</h3>
+                                <!--<p>Add some text</p>-->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+             <!--<div class="col-md-4 proj_gallery_grid" data-aos="zoom-in">-->
+                <!--<div class="section_1_gallery_grid" data-aos="zoom-in">-->
+                    <!--<a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/p2.jpg">-->
+                        <!--<div class="section_1_gallery_grid1">-->
+                            <!--<img src="/static/images/p2.jpg" alt=" " class="img-fluid" />-->
+                            <!--<div class="proj_gallery_grid1_pos">-->
+                                <!--<h3>Baked Food</h3>-->
+                                <!--<p>Add some text</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                <!--</div>-->
+              <!--</div>-->
+             <!--<div class="col-md-4 proj_gallery_grid" data-aos="zoom-in">-->
+                <!--<div class="section_1_gallery_grid">-->
+                    <!--<a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/p4.jpg">-->
+                        <!--<div class="section_1_gallery_grid1">-->
+                            <!--<img src="/static/images/p4.jpg" alt=" " class="img-fluid" />-->
+                            <!--<div class="proj_gallery_grid1_pos">-->
+                                <!--<h3>Baked Food</h3>-->
+                                <!--<p>Add some text</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                <!--</div>-->
+              <!--</div>-->
+             <!--<div class="col-md-4 proj_gallery_grid" data-aos="zoom-in">-->
+                <!--<div class="section_1_gallery_grid" data-aos="zoom-in">-->
+                    <!--<a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/p5.jpg">-->
+                        <!--<div class="section_1_gallery_grid1">-->
+                            <!--<img src="/static/images/p5.jpg" alt=" " class="img-fluid" />-->
+                            <!--<div class="proj_gallery_grid1_pos">-->
+                                <!--<h3>Baked Food</h3>-->
+                                <!--<p>Add some text</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                <!--</div>-->
+              <!--</div>-->
+             <!--<div class="col-md-4 proj_gallery_grid" data-aos="zoom-in">-->
+                <!--<div class="section_1_gallery_grid">-->
+                    <!--<a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/p3.jpg">-->
+                        <!--<div class="section_1_gallery_grid1">-->
+                            <!--<img src="/static/images/p3.jpg" alt=" " class="img-fluid" />-->
+                            <!--<div class="proj_gallery_grid1_pos">-->
+                                <!--<h3>Baked Food</h3>-->
+                                <!--<p>Add some text</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                <!--</div>-->
+              <!--</div>-->
+             <!--<div class="col-md-4 proj_gallery_grid" data-aos="zoom-in">-->
+                <!--<div class="section_1_gallery_grid" data-aos="zoom-in">-->
+                    <!--<a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/p2.jpg">-->
+                        <!--<div class="section_1_gallery_grid1">-->
+                            <!--<img src="/static/images/p2.jpg" alt=" " class="img-fluid" />-->
+                            <!--<div class="proj_gallery_grid1_pos">-->
+                                <!--<h3>Baked Food</h3>-->
+                                <!--<p>Add some text</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+    </div>
+</section>
+<!--//gallery-->
+{% endblock %}
